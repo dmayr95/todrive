@@ -81,6 +81,10 @@
 
         /* generel styling ends */
 
+        .card_dropdown_item_text p{
+            margin-bottom: 0 !important;
+        }
+
         .card {
             margin: 20px 0 15px 0;
             overflow: hidden;
@@ -1059,30 +1063,6 @@ BUTTONS
                 arrows: false
             });
         });
-
-        /* slider begins */
-
-        $(function () {
-            var animateTime = 300,
-                navLink = $('.card_dropdown_item');
-            navLink.click(function () {
-                let nav = $(this).last();
-                console.log(nav);
-                if (nav.height() === 0) {
-                    autoHeightAnimate(nav, animateTime);
-                } else {
-                    nav.stop().animate({ height: '0' }, animateTime);
-                }
-            });
-        })
-
-        /* Function to animate height: auto */
-        function autoHeightAnimate(element, time) {
-            var curHeight = element.height(), // Get Default Height
-                autoHeight = element.css('height', 'auto').height(); // Get Auto Height
-            element.height(curHeight); // Reset to Default Height
-            element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
-        }
 
         /* slider ends */
 
