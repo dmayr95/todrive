@@ -555,6 +555,7 @@ BUTTONS
         }
 
         .under_about_us_text_container {
+            margin-top: -5px;
             color: #fff;
             background-color: #4A4A4A;
             padding: 36px 19px;
@@ -699,6 +700,48 @@ BUTTONS
         }
 
         /* hamburger styling end */
+
+        /* newsletter begins */
+        .newsletter_container {
+            padding: 0 20px 0 20px;
+        }
+
+        .newsletter_container button {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            margin-left: 0;
+            margin-right: 0;
+            -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.20);
+            -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.20);
+            box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.20);
+        }
+
+        .newsletter_container input {
+            box-sizing: border-box;
+            border: 1px solid #ACACAC;
+            border-radius: 100px;
+            width: 100%;
+            padding: 10px 0 10px 13px;
+        }
+
+        /* newsletter begins */
+
+        /* footer begins */
+        .rights p,
+        .rights a{
+            text-align: center;
+            font-size: 14px;
+            color: #747474;
+        }
+
+        .rights a:hover{
+            color: #202020;
+        }
+
+        /* footer ends */
 
         /* nav ends */
     </style>
@@ -1018,9 +1061,26 @@ BUTTONS
                 tristique odio. Lorem ipsum dolor sit amet, consectetur </p>
             <br />
             <p>Adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex id, tristique odio. </p>
+            <a href="#"><button class="btn" style="background-color: #fff; margin-top: 27px; margin-left: 0;">Learn
+                    more</button></a>
         </div>
 
-        <footer style="height: 500px; width: 100%;"></footer>
+        <div class="newsletter_container">
+            <h3 style="font-family: 'AvenirNext Bold'; color: #434343; font-size: 28px; margin: 36px 0 30px 0;">
+                Newsletter</h3>
+            <input type="text" placeholder="Enter your email address ">
+            <button class="btn subscribe_button">Subscribe to our newsletter</button>
+            <p class="subscribe_success_text" style="color: rgb(36, 216, 13); display: none;">Successfully subscribed
+            </p>
+        </div>
+
+        <footer style="width: 100%; margin-top: 40px; margin-bottom: 15px;">
+            <div class="rights">
+                <p>Copyright © 2020 ToDrive. All rights reserved.</p>
+                <br />
+                <p><a href="">Imprint</a> | <a href="">Privacy Policy</a></p>
+            </div>
+        </footer>
     </main>
 
     <script type="text/javascript">
@@ -1044,6 +1104,19 @@ BUTTONS
         });
 
         /* slider ends */
+
+        /* subscribe begins */
+
+        let subscribe_button = document.querySelector('.subscribe_button');
+        let subscribe_success_text = document.querySelector('.subscribe_success_text');
+
+        subscribe_button.addEventListener('click', () => {
+            setTimeout(() => {
+                subscribe_success_text.style.display = "block"
+            }, 550);
+        });
+
+        /* subsscribe ends */
 
 
         /* hamburger animation begins */
