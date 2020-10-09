@@ -117,7 +117,12 @@
         }
 
         button {
-            margin: 5px;
+            display: block;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 400px;
+            margin-top: 5px;
+            margin-bottom: 5px;
             border-radius: 100px !important;
             border: 1px solid #fff;
             background-color: #fff;
@@ -538,7 +543,9 @@ BUTTONS
 
         /* about us styling begins */
         .about_us_container {
+            display: flex;
             position: relative;
+            height: min-content;
         }
 
         .about_us_container h3 {
@@ -551,14 +558,24 @@ BUTTONS
         }
 
         .about_us_image_container img {
-            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .under_about_us_text_container {
-            margin-top: -5px;
             color: #fff;
             background-color: #4A4A4A;
             padding: 36px 19px;
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .about_us_container {
+                flex-direction: column;
+            }
+
+            .about_us_image_container img{
+                width: 100%;
+            }
         }
 
         /* about us styling ends */
@@ -569,7 +586,7 @@ BUTTONS
         nav {
             position: absolute;
             top: 0;
-            width: 100vw;
+            width: 100%;
             height: min-content;
             background-color: rgba(0, 0, 0, 0.5);
         }
@@ -731,13 +748,13 @@ BUTTONS
 
         /* footer begins */
         .rights p,
-        .rights a{
+        .rights a {
             text-align: center;
             font-size: 14px;
             color: #747474;
         }
 
-        .rights a:hover{
+        .rights a:hover {
             color: #202020;
         }
 
@@ -779,7 +796,6 @@ BUTTONS
                         <li><a href="">Lorem impsum 3</a></li>
                         <li><a href="">Lorem impsum 4</a></li>
                         <li><a href="">Lorem impsum 5</a></li>
-                        <li><a href="">Lorem impsum 6</a></li>
                     </ul>
                 </div>
             </div>
@@ -1055,14 +1071,15 @@ BUTTONS
                 <img src="../design/images/GettyImages-1182299316@2x.webp" alt="about us">
             </div>
             <h3>About us</h3>
-        </div>
-        <div class="under_about_us_text_container">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex id,
-                tristique odio. Lorem ipsum dolor sit amet, consectetur </p>
-            <br />
-            <p>Adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex id, tristique odio. </p>
-            <a href="#"><button class="btn" style="background-color: #fff; margin-top: 27px; margin-left: 0;">Learn
-                    more</button></a>
+            <div class="under_about_us_text_container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex
+                    id,
+                    tristique odio. Lorem ipsum dolor sit amet, consectetur </p>
+                <br />
+                <p>Adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex id, tristique odio. </p>
+                <a href="#"><button class="btn" style="background-color: #fff; margin-top: 27px; margin-left: 0;">Learn
+                        more</button></a>
+            </div>
         </div>
 
         <div class="newsletter_container">
