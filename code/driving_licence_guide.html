@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>todrive</title>
+    <meta name="description" content="">
+    <meta name="og:title" property="og:title" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="author" content="Damir Markovic">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous"></script>
+
+    <style>
+        /* generel styling begins */
+
+        @font-face {
+            font-family: "AvenirNext";
+            src: url("../fonts/avenir-next/New folder (10)/AvenirNextLTPro-Bold.otf") format("opentype"),
+        }
+
+        @font-face {
+            font-family: "AvenirNext Bold";
+            src: url('../fonts/avenir-next/New folder (10)/AvenirNextLTPro-Bold.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: "AvenirNext Regular";
+            src: url('../fonts/avenir-next/New folder (10)/AvenirNextLTPro-Regular.otf') format("opentype");
+        }
+
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: 'AvenirNext Regular';
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .background_white {
+            background-color: #fff !important;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-family: 'AvenirNext Bold';
+        }
+
+        /* generel styling ends */
+
+
+        /* nav begins */
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100% !important;
+            height: min-content;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .link_slider_container {
+            background-color: #272727;
+            height: 40px;
+        }
+
+        .link_slider_container ul li {
+            list-style: none;
+        }
+
+        .link_slider_container ul li a {
+            color: #707070;
+        }
+
+        .link_slider_container ul {
+            align-items: center;
+            display: flex;
+        }
+
+        .link_slider_ul .slick-slide {
+            width: min-content !important;
+        }
+
+        .link_slider_ul {
+            align-items: center;
+            margin: 0;
+            height: 100%;
+        }
+
+        .link_slider_ul>* {
+            width: min-content;
+        }
+
+        .burger_menu_container {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .hamburger_menu {
+            z-index: 10;
+            margin: 0 15px 0 auto;
+            width: 30px;
+            height: min-content;
+        }
+
+        .hamburger_menu:hover {
+            cursor: pointer;
+        }
+
+        .hamburger_menu hr {
+            transition: 0.2s;
+            margin: 6px 0;
+            height: 2px;
+            width: 100%;
+            background-color: #422B2B;
+            border: 0;
+        }
+
+        .link_slider_ul a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .link_slider_ul a:focus,
+        .link_slider_ul a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .side_navigation_background {
+            transition: 0.5s;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: -100vh;
+            left: 0;
+            right: 0;
+            background-color: #272727;
+        }
+
+        .side_navigation_ul {
+            margin-top: 70px;
+            position: absolute;
+            top: 0;
+        }
+
+        .side_navigation ul li {
+            transition: 0.2s;
+            position: absolute;
+            left: 100vw;
+            width: 100vw;
+        }
+
+        .side_navigation ul li a {
+            transition: 0.3s;
+            color: #797979;
+        }
+
+        .side_navigation ul li a:hover {
+            color: #fff;
+        }
+
+        .move_hamburger_link {
+            left: 20px !important;
+        }
+
+        /* hamburger stlying begins */
+
+        .style_line_2_on_open {
+            width: 0 !important;
+        }
+
+        .style_line_2_on_close {
+            width: 100% !important;
+        }
+
+        .rotate_plus_45 {
+            transform: translateY(6pt) rotateZ(45deg);
+        }
+
+        .rotate_minus_45 {
+            transform: translateY(-6pt) rotateZ(-45deg);
+        }
+
+        .open_sidemenu {
+            top: 0 !important;
+        }
+
+        /* hamburger styling end */
+
+
+        /* slider styling begin */
+
+        .slider_container>* {
+            width: 100% !important;
+        }
+
+        .slick-track>* {
+            margin-right: 40px;
+        }
+
+        .slick-slide {
+
+            width: 80vw !important;
+        }
+
+        .slider_card_header_text {
+            margin-top: 15px;
+            color: #53B7A0;
+        }
+
+        .slider_card_content {
+            margin: 15px 0;
+        }
+
+        .slider_card {
+            max-width: 70vw !important;
+            width: unset !important;
+            padding: 9px 24px;
+        }
+
+        .slider_card_image_container {
+            margin-top: 33px;
+        }
+
+        .slider_button {
+            background-color: #75DEC6;
+            width: 130px;
+            padding: 15px 20px;
+            margin-bottom: 35px;
+            color: #3B3B3B;
+            font-size: 16px;
+        }
+
+        .slider_button:hover {
+            background-color: #43c4a6 !important;
+        }
+
+        .slider_container {
+            margin-bottom: 60px;
+        }
+
+        @media only screen and (min-width: 800px) {
+            .slider_card_header {
+                display: flex;
+                gap: 10px;
+                align-items: flex-end;
+            }
+        }
+
+        /* slider styling end */
+
+
+        /* title container begins*/
+
+        .title_container {
+            margin: 20px 19px;
+        }
+
+        .title_container p,
+        .title_container a {
+            color: #707070;
+            font-size: 12px;
+        }
+
+        .title_container a:hover {
+            color: #000;
+        }
+
+        /* title container ends */
+
+
+        /* header begins */
+
+        header {
+            height: 110px;
+        }
+
+        .header_content {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* header ends*/
+
+        /* greeting begins */
+
+        .greeting_container {
+            margin-top: 30px;
+        }
+
+        .greeting_container p {
+            margin-top: 15px;
+            color: #505050;
+            font-size: 16px;
+        }
+
+        /* greeting ends */
+
+
+
+        /* cards begins */
+        .card_dropdown_item_text p {
+            margin-bottom: 0 !important;
+        }
+
+        .card {
+            margin: 20px 12px !important;
+            overflow: hidden;
+            border-radius: 20px;
+            background-color: #fff;
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+        }
+
+        .card_header {
+            background-color: #FF7272;
+            display: flex;
+            padding: 16px 9px;
+        }
+
+        .card_header_text {
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .card_content {
+            padding: 15px;
+        }
+
+        .card_information_item {
+            display: flex;
+            width: 49%;
+        }
+
+        .card_image_container {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 100px;
+        }
+
+        .card_image_container img {
+            width: 75%;
+        }
+
+        .first_row,
+        .second_row {
+            margin: 5px 0;
+            display: flex;
+        }
+
+        .card_information img {
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .card_dropdown_item_text img {
+            margin-left: auto;
+            height: 15px;
+        }
+
+        .card_dropdown_item:hover {
+            cursor: pointer;
+        }
+
+        .card_dropdown_item {
+            margin-top: 15px;
+        }
+
+        .card_dropdown_area {
+            margin: 32px 0 10px 0;
+        }
+
+        .card_dropdown_item_text {
+            display: flex;
+            align-items: center;
+        }
+
+        .card_dropdown_item hr {
+            margin-top: 10px;
+            border: 1px solid #D8D8D8;
+            width: 100%;
+        }
+
+        /* cards ends */
+
+
+        /* footer begins */
+        .rights p,
+        .rights a {
+            text-align: center;
+            font-size: 14px;
+            color: #747474;
+        }
+
+        .rights a:hover {
+            color: #202020;
+        }
+
+        /* footer ends */
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="main_nav">
+            <div class="burger_menu_container">
+                <h1 style="color: #000; font-size: 23px; margin: 20px; z-index: 10;">todrive<span
+                        style="color: #9B9B9B;">.ch</span>
+                </h1>
+                <div class="hamburger_menu">
+                    <hr class="hamburger_menu_line1" />
+                    <hr class="hamburger_menu_line2" />
+                    <hr class="hamburger_menu_line3" />
+                </div>
+            </div>
+            <div class="link_slider_container">
+                <ul class="link_slider_ul">
+                    <li><a>HOME</a></li>
+                    <li><a>COSTS</a></li>
+                    <li><a>CHECKLIST</a></li>
+                    <li><a>LOREMIPSUM</a></li>
+                </ul>
+            </div>
+            <div class="side_navigation">
+                <div class="side_navigation_background"></div>
+                <div class="side_navigation_ul">
+                    <ul>
+                        <li><a href="">Lorem impsum 1</a></li>
+                        <li><a href="">Lorem impsum 2</a></li>
+                        <li><a href="">Lorem impsum 3</a></li>
+                        <li><a href="">Lorem impsum 4</a></li>
+                        <li><a href="">Lorem impsum 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title_container">
+            <p><a href="index.html">Home</a> > Inside Driving License Guide</p>
+            <div class="greeting_container">
+                <h1>Guide to Driving Licence</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex
+                    id, tristique odio. </p>
+            </div>
+        </div>
+
+        <!-- cards conatiner begins -->
+        <div class="card_conatiner">
+            <div class="card">
+                <div class="card_header" style="background-color: #F46A6A;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/fall@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 1 of 13</p>
+                        <h3>First aid course</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card_header" style="background-color: #F86C88;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/XMLID_1377_@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 2 of 13</p>
+                        <h3>First aid course</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card_header" style="background-color: #FF8E3B;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/view@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 3 of 13</p>
+                        <h3>Eye test</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card_header" style="background-color: #DD9A1C;">
+                    <div class="card_image_container">
+                        <img style="width: 50%;" src="../design/icons/book copy@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 4 of 13</p>
+                        <h3>Theory learning</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #81C450;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/book@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 5 of 13</p>
+                        <h3>Theory exam</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #67CEB6;">
+                    <div class="card_image_container">
+                        <img style="width: 60%;" src="../design/icons/XMLID_2140_@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 6 of 13</p>
+                        <h3>About learner’s license</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #50C0C9;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/steering-wheel-t@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 7 of 13</p>
+                        <h3>Driving lesson</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #48A7D9;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/steering-wheel@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 8 of 13</p>
+                        <h3>Private practice drives</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #3687CC;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/Page-1@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 9 of 13</p>
+                        <h3>Traffic course</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #767DD6;">
+                    <div class="card_image_container">
+                        <img style="width: 60%;" src="../design/icons/document-1@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 10 of 13</p>
+                        <h3>Practical examination</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #9E63C3;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/driver-license@2x-l.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 11 of 13</p>
+                        <h3>Driving licence on trial</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #D361A3;">
+                    <div class="card_image_container">
+                        <img style="width: 65%;" src="../design/icons/schedule@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 12 of 13</p>
+                        <h3>WAB course</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card_header" style="background-color: #F281C2;">
+                    <div class="card_image_container">
+                        <img src="../design/icons/driver-license@2x.png" alt="card_icon" />
+                    </div>
+                    <div class="card_header_text">
+                        <p>Step 13 of 13</p>
+                        <h3>Unlimited driving licence</h3>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <div class="card_information">
+                        <div class="first_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/price@2x.png"
+                                    alt="price">
+                                <p>€85-130</p>
+                            </div>
+                            <div class="card_information_item card_hours"><img
+                                    src="../design/icons/clock-circular-outline@2x.png" alt="hours">
+                                <p>8 hours</p>
+                            </div>
+                        </div>
+                        <div class="second_row">
+                            <div class="card_information_item card_price"><img src="../design/icons/check-in@2x.png"
+                                    alt="check-in">
+                                <p>Mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_dropdown_area">
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">INFO & TIPS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">COSTS</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card_dropdown_item">
+                            <div class="card_dropdown_item_text">
+                                <p style="color: #338ECF;">EXPERIENCE</p>
+                                <img src="../design/icons/arrow-point-to-right (-56@2x.png" alt="arrow">
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- cards container ends -->
+
+        <!-- footer begins -->
+        <footer style="width: 100%; margin-top: 40px; margin-bottom: 15px;">
+            <div class="rights">
+                <p>Copyright © 2020 ToDrive. All rights reserved.</p>
+                <br />
+                <p><a href="">Imprint</a> | <a href="">Privacy Policy</a></p>
+            </div>
+        </footer>
+        <!-- footer ends -->
+    </main>
+
+    <script type="text/javascript">
+        /* slick slider begins */
+
+        $(document).ready(function () {
+            $('.link_slider_ul').slick({
+                autoplay: false,
+                mobileFirst: true,
+                variableWidth: true,
+                arrows: false
+            });
+        });
+
+        /* slick slider ends */
+
+
+        /* hamburger animation begins */
+
+        let hamburger_menu = document.querySelector(".hamburger_menu");
+        let hamburger_menu_line1 = document.querySelector(".hamburger_menu_line1");
+        let hamburger_menu_line2 = document.querySelector(".hamburger_menu_line2");
+        let hamburger_menu_line3 = document.querySelector(".hamburger_menu_line3");
+        let side_navigation_background = document.querySelector(".side_navigation_background");
+        let side_navigation_ul = document.querySelector(".side_navigation_ul");
+        let side_navigation_li_array = side_navigation_ul.children[0].children;
+        let toggle = true;
+
+        function dealy(milliseconds, element, top) {
+            setTimeout(() => {
+                element.classList.add("move_hamburger_link");
+                element.style.top = top + "px";
+            }, milliseconds);
+        }
+
+        hamburger_menu.addEventListener("click", () => {
+            if (toggle) {
+                side_navigation_background.classList.add("open_sidemenu");
+                hamburger_menu_line1.classList.add("rotate_plus_45");
+                hamburger_menu_line2.classList.add("style_line_2_on_open");
+                hamburger_menu_line3.classList.add("rotate_minus_45");
+                hamburger_menu_line1.classList.add("background_white");
+                hamburger_menu_line2.classList.add("background_white");
+                hamburger_menu_line3.classList.add("background_white");
+                for (let i = 0; i < side_navigation_li_array.length; i++) {
+                    const element = side_navigation_li_array[i];
+                    dealy(150 * i, element, 35 * i);
+                }
+            }
+            else {
+                side_navigation_background.classList.remove("open_sidemenu");
+                hamburger_menu_line1.classList.remove("rotate_plus_45");
+                hamburger_menu_line2.classList.remove("style_line_2_on_open");
+                hamburger_menu_line3.classList.remove("rotate_minus_45");
+                hamburger_menu_line1.classList.remove("background_white");
+                hamburger_menu_line2.classList.remove("background_white");
+                hamburger_menu_line3.classList.remove("background_white");
+                for (let i = 0; i < side_navigation_li_array.length; i++) {
+                    const element = side_navigation_li_array[i];
+                    element.classList.remove("move_hamburger_link");
+                }
+            }
+            toggle = !toggle;
+        });
+
+        /* hamburger animation ends */
+    </script>
+
+</body>
+
+</html>
