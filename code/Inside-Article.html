@@ -4,11 +4,9 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Weg zum Führerschein: Der ultimative Guide zum Führerschein (2020) | todrive.ch</title>
-    <meta name="description"
-        content="Der Weg zum Führerschein einfach gemacht. Eine Schritt-für-Schritt-Anleitung der Kategorie B (Auto) ✓ Aktuell ✓ Modern ✓ Hilfreich ✓ Tipps &amp; Tricks">
-    <meta name="og:title" property="og:title"
-        content="Weg zum Führerschein: Der ultimative Guide zum Führerschein (2020) | todrive.ch">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="og:title" property="og:title" content="">
     <meta name="twitter:card"
         content="Der Weg zum Führerschein einfach gemacht. Eine Schritt-für-Schritt-Anleitung der Kategorie B (Auto) ✓ Aktuell ✓ Modern ✓ Hilfreich ✓ Tipps &amp; Tricks">
     <meta name="author" content="Damir Markovic">
@@ -84,10 +82,75 @@
         <div class="title_container">
             <p><a href="index.html">Home</a> > <a href="index.html#guide">Article</a> > Inside Article</p>
             <div class="greeting_container">
-                <div></div>
-                <h1>Guide to Driving Licence</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel quam vestib ulum, tempus ex
-                    id, tristique odio. </p>
+                <div class="title_text_container">
+                    <h1>
+                        <span>Lorem ipsum</span>
+                        <span class="main_h1">Lorem ipsum dol res siramet lipsum</span>
+                    </h1>
+                    <p>Posted on: 21 September 2020</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_container">
+            <img src="../design/images/Ellipse_127@2x.png" alt="user_image">
+            <div class="user_info">
+                <p class="user_name">Daniella Stewart</p>
+                <p class="user_location">Stockholm</p>
+            </div>
+        </div>
+
+        <div class="social_media_container">
+            <div class="img_container facebook"><img src="../design/images/Gruppe_78@2x.png" alt="facebook"></div>
+            <div class="img_container twitter"><img src="../design/images/Pfad_1578@2x.png" alt="twitter"></div>
+            <div class="img_container linkedIn"><img src="../design/images/Gruppe_81@2x.png" alt="linked in"></div>
+        </div>
+
+        <div class="article_image_and_text">
+            <img src="../design/images/GettyImages-150484468@2x.png" alt="text image">
+            <p>Lorem ipsum dolor sit amet consectetu rom adipiscing elit. Suspendisse velqua mon vestib ulum tempus ex
+                id tristique odio iipsum dolores. </p>
+        </div>
+
+        <div class="all_about_container">
+            <h3><strong>That’s what it’s all about</strong></h3>
+            <div class="all_about_row">
+                <div class="all_about_row_image_container">
+                    <img src="../design/icons/Gruppe_113@2x.png" alt="letter">
+                </div>
+                <p>Dipiscing elit aecenas vitaelip velit massa lorem ipsum.</p>
+            </div>
+            <div class="all_about_row">
+                <div class="all_about_row_image_container">
+                    <img src="../design/icons/Gruppe_113@2x.png" alt="letter">
+                </div>
+                <p>Dipiscing elit aecenas vitaelip velit massa lorem ipsum.</p>
+            </div>
+            <div class="all_about_row">
+                <div class="all_about_row_image_container">
+                    <img src="../design/icons/Gruppe_113@2x.png" alt="letter">
+                </div>
+                <p>Dipiscing elit aecenas vitaelip velit massa lorem ipsum.</p>
+            </div>
+        </div>
+
+        <div class="table_of_content_container">
+            <div class="table_of_content_inner_container">
+                <div class="table_of_content_first">
+                    <h3>Table of content</h3>
+                    <p>Lorem dolores sir amen</p>
+                </div>
+                <div class="table_of_content_middle">
+                    <p>Lorem ipsum dolor</p>
+                    <p>Sit amet consectetur</p>
+                    <p>Adipiscing elit</p>
+                    <p>Maecenas vitae velit</p>
+                    <p>Emassposueres blandit</p>
+                </div>
+                <div class="table_of_content_end">
+                    <p>Lorem dolores sir amen</p>
+                    <p>Lorem dolores sir amen</p>
+                </div>
             </div>
         </div>
 
@@ -856,6 +919,13 @@
         });
 
         /* slick slider ends */
+
+
+        /* title creator begins */
+
+        let title_text_container = document.querySelector(".title_text_container");
+        document.title = `${title_text_container.children[0].children[0].innerHTML} - ${title_text_container.children[0].children[1].innerHTML}`
+        /* title creator ends */
 
 
         /* hamburger animation begins */
