@@ -4,10 +4,13 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>todrive</title>
-    <meta name="description" content="">
-    <meta name="og:title" property="og:title" content="">
-    <meta name="twitter:card" content="summary">
+    <title>Einfach alles für Deinen Führerschein in der Schweiz | todrive.ch</title>
+    <meta name="description"
+        content="Einfach alles für Deinen Führerausweis bei todrive.ch ✓ Weg zum Führerschein ✓ Fahrlehrervergleich ✓ Tipps &amp; Tricks ✓ Alles auf einer Plattform.">
+    <meta name="og:title" property="og:title"
+        content="Einfach alles für Deinen Führerschein in der Schweiz | todrive.ch">
+    <meta name="twitter:card"
+        content="Einfach alles für Deinen Führerausweis bei todrive.ch ✓ Weg zum Führerschein ✓ Fahrlehrervergleich ✓ Tipps &amp; Tricks ✓ Alles auf einer Plattform.">
     <meta name="author" content="Damir Markovic">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -58,6 +61,7 @@
 
         a {
             text-decoration: none;
+            color: unset;
         }
 
         /* generel styling ends */
@@ -80,6 +84,34 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        .header_content button {
+            margin-left: unset !important;
+            margin-right: unset !important;
+        }
+
+        .button_area {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1050px) {
+            .header_content {
+                align-items: baseline;
+            }
+
+            .button_area {
+                flex-direction: row;
+                width: 50%;
+                gap: 20px;
+            }
+
+            .header_content h2 {
+                width: 50%;
+                text-align: left !important;
+            }
         }
 
         /* header ends */
@@ -202,7 +234,7 @@
 
         .button_costum {
             width: 100%;
-            padding: 15px 40px;
+            padding: 15px 25px;
             transition: 0.3s;
         }
 
@@ -601,6 +633,48 @@ BUTTONS
             background-color: rgba(0, 0, 0, 0.5);
         }
 
+        .link_menu ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        .link_menu ul li:hover {
+            color: #fff;
+        }
+
+        .link_menu {
+            margin-left: auto;
+        }
+
+        .link_menu ul li {
+            font-size: 14px;
+            color: #9B9B9B;
+        }
+
+        @media only screen and (min-width: 1050px) {
+            nav {
+                background-color: #272727 !important;
+                position: fixed;
+            }
+
+            .hamburger_menu {
+                margin-left: 30px !important;
+            }
+
+            .burger_menu_container {
+                margin: 0 auto;
+                width: 80%;
+            }
+
+            .burger_menu_container h1,
+            .burger_menu_container h2,
+            .burger_menu_container h3 {
+                margin: 20px 0 !important;
+            }
+        }
+
+        /* nav ends */
+
         .link_slider_container {
             background-color: #fff;
             height: 40px;
@@ -704,6 +778,26 @@ BUTTONS
             left: 20px !important;
         }
 
+        @media only screen and (min-width: 1050px) {
+            .link_slider_container {
+                display: none;
+                position: fixed;
+            }
+
+            .side_navigation_ul {
+                position: fixed;
+                width: 40%;
+                right: 0;
+            }
+
+            .side_navigation_background {
+                width: 40vw;
+                right: 0;
+                left: unset;
+                position: fixed;
+            }
+        }
+
         /* hamburger stlying begins */
 
         .style_line_2_on_open {
@@ -754,6 +848,20 @@ BUTTONS
             padding: 10px 0 10px 13px;
         }
 
+        .subscribe_button:active {
+            transform: translateY(3px);
+            -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20);
+            -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20);
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20);
+        }
+
+        @media only screen and (min-width: 1050px) {
+            .subscribe_success_text {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+
         /* newsletter begins */
 
         /* footer begins */
@@ -780,9 +888,18 @@ BUTTONS
     <header>
         <nav class="main_nav">
             <div class="burger_menu_container">
-                <h1 style="color: #fff; font-size: 23px; margin: 20px; z-index: 10;">todrive<span
-                        style="color: #9B9B9B;">.ch</span>
-                </h1>
+                <a href="index.html">
+                    <h1 style="color: #fff; font-size: 23px; margin: 20px; z-index: 10;">todrive<span
+                            style="color: #9B9B9B;">.ch</span>
+                    </h1>
+                </a>
+                <div class="link_menu">
+                    <ul>
+                        <li><a href="">For learner drivers</a></li>
+                        <li><a href="">For driving instructors</a></li>
+                        <li><a href="">About us</a></li>
+                    </ul>
+                </div>
                 <div class="hamburger_menu">
                     <hr class="hamburger_menu_line1" />
                     <hr class="hamburger_menu_line2" />
@@ -815,16 +932,18 @@ BUTTONS
                 style="font-family: 'AvenirNext Bold'; color: #fff; text-align: center; margin-bottom: 35px; font-size: 40px;">
                 Simply everything for the driving licence
             </h2>
-            <button class="button_costum"
-                style="color:#5D5D5D; background-image: url('../design/icons/arrow-point-to-right (2)@2x.png');">
-                Driving Instructions
-            </button>
-            <a href="driving_licence_guide.html" style="display: contents;">
+            <div class="button_area">
                 <button class="button_costum"
-                    style="background-color: rgba(0,0,0,0); color: #fff; background-image: url('../design/icons/arrow-point-to-right (-1@2x.png');">
-                    Driving Licence Guide
+                    style="color:#5D5D5D; background-image: url('../design/icons/arrow-point-to-right (2)@2x.png');">
+                    Driving Instructions
                 </button>
-            </a>
+                <a href="fuehrerschein-guide.html" style="display: contents;">
+                    <button class="button_costum"
+                        style="background-color: rgba(0,0,0,0); color: #fff; background-image: url('../design/icons/arrow-point-to-right (-1@2x.png');">
+                        Driving Licence Guide
+                    </button>
+                </a>
+            </div>
         </div>
     </header>
 
