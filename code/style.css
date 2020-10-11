@@ -20,7 +20,6 @@
 
 * {
   margin: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -40,12 +39,25 @@ a {
 /* generel styling ends */
 
 /* header begins*/
-header {
+.main_body header {
   height: calc(var(--vh, 1vh) * 100);
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.main_body main{
+    width: 100%;
+}
+
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    height: 110px;
 }
 
 .main_header {
@@ -597,11 +609,12 @@ fieldset[disabled] .btn {
 /* nav begins */
 
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100% !important;
   height: min-content;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(31, 31, 31);
+  z-index: 8;
 }
 
 .link_menu ul {
@@ -621,6 +634,10 @@ nav {
 .link_menu ul li {
   font-size: 14px;
   color: #9b9b9b;
+}
+
+.burger_menu_container a {
+  z-index: 10;
 }
 
 @media only screen and (min-width: 1050px) {
@@ -691,6 +708,7 @@ nav {
   margin: 0 15px 0 auto;
   width: 30px;
   height: min-content;
+  transition: 0.5s;
 }
 
 .hamburger_menu:hover {
@@ -704,6 +722,11 @@ nav {
   width: 100%;
   background-color: #fff;
   border: 0;
+}
+
+.opened_x {
+  position: absolute !important;
+  right: 0 !important;
 }
 
 .link_slider_ul a {
@@ -762,12 +785,12 @@ nav {
 
   .side_navigation_ul {
     position: fixed;
-    width: 40%;
+    width: 300px;
     right: 0;
   }
 
   .side_navigation_background {
-    width: 40vw;
+    width: 300px;
     right: 0;
     left: unset;
     position: fixed;
@@ -852,8 +875,8 @@ nav {
   font-size: 12px;
 }
 
-.greeting_container h1{
-    margin-bottom: 15px;
+.greeting_container h1 {
+  margin-bottom: 15px;
 }
 
 .title_container p {
