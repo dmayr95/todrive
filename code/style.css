@@ -47,17 +47,17 @@ a {
   justify-content: center;
 }
 
-.main_body main{
-    width: 100%;
+.main_body main {
+  width: 100%;
 }
 
-main{
-    width: 80%;
-    margin: 0 auto;
+main {
+  width: 80%;
+  margin: 0 auto;
 }
 
-header{
-    height: 110px;
+header {
+  height: 110px;
 }
 
 .main_header {
@@ -108,6 +108,12 @@ header{
 /* cards begins */
 .card_dropdown_item_text p {
   margin-bottom: 0 !important;
+}
+
+.card_dropdown_item_text a {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .card {
