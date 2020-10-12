@@ -277,8 +277,8 @@ h6 {
 /* artical image and text */
 
 /* article_image_and_text begins */
-.article_image_and_text a{
-  color: #31A2D5;
+.article_image_and_text a {
+  color: #31a2d5;
 }
 /* article_image_and_text ends */
 
@@ -298,6 +298,14 @@ h6 {
 main {
   width: 80%;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 800px) {
+  main,
+  .main_body main {
+    width: 95%;
+    margin: 0 auto;
+  }
 }
 
 header {
@@ -410,10 +418,15 @@ header {
   margin-left: 10px;
 }
 
+.entry_text {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .card_header_text p,
 .card_header_text h3 {
   color: #fff;
-  font-family: 'AvenirNext Regular';
+  font-family: "AvenirNext Regular";
 }
 
 .card_content {
@@ -533,10 +546,20 @@ button:hover {
 
 .advantages_heading {
   max-width: 80%;
+  margin: 0 auto;
 }
 
 .advantages_container {
   padding: 0 0px 1px 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  .advantages_heading {
+    margin-left: 30px;
+  }
+  .advantages_container {
+    padding: 0;
+  }
 }
 
 /* slider styling begin */
@@ -1040,6 +1063,7 @@ nav {
   margin-top: 70px;
   position: absolute;
   top: 0;
+  margin-left: 5px;
 }
 
 .side_navigation ul li {
@@ -1062,9 +1086,14 @@ nav {
   left: 20px !important;
 }
 
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 470px) {
   .link_slider_container {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .link_slider_container {
     position: fixed;
   }
 
@@ -1109,6 +1138,8 @@ nav {
 /* newsletter begins */
 .newsletter_container {
   padding: 0 20px 0 20px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .newsletter_container button {
