@@ -40,6 +40,29 @@ a {
   color: unset;
 }
 
+.shadow {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "AvenirNext Bold";
+  color: #3b3b3b;
+}
+
+.whole_width_in_margin_parent {
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
 /* generel styling ends */
 
 /* user begins */
@@ -60,6 +83,49 @@ a {
 }
 
 /* user ends */
+
+/* ordenery text with heading begins */
+
+.ordenery_text_with_heading {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.ordenery_text_with_heading h3 {
+  font-size: 21px;
+}
+
+.ordenery_text_with_heading h4 {
+  font-size: 18px;
+  margin: 25px 0 10px 0;
+}
+
+/* ordenery text with heading ends */
+
+/* quote container ends */
+.quote_container {
+  background-color: #8089f7;
+  padding: 25px;
+}
+.quote_container h2 {
+  margin: 25px;
+  color: #fff;
+  font-size: 28px;
+}
+
+.quote_container_user_container {
+  margin: 25px;
+}
+
+.quote_container_user_container p {
+  color: #fff;
+}
+
+.quote_container_user_container .quote_container_name {
+  font-size: 18px;
+}
+
+/* quote container ends */
 
 /* social media begins */
 
@@ -148,15 +214,29 @@ a {
   padding: 40px 20px;
 }
 
-.table_of_content_middle{
-    background-color: #F5F5F5;
+.table_of_content_first {
+  padding: 25px 15px 10px 15px;
+}
+
+.table_of_content_middle {
+  background-color: #f5f5f5;
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.table_of_content_end {
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .table_of_content_inner_container {
   width: 90%;
   border-radius: 20px;
   background-color: #fff;
-  padding: 25px 15px;
 }
 
 /* table of content ends */
@@ -196,6 +276,12 @@ a {
 
 /* artical image and text */
 
+/* article_image_and_text begins */
+.article_image_and_text a{
+  color: #31A2D5;
+}
+/* article_image_and_text ends */
+
 /* header begins*/
 .main_body header {
   height: calc(var(--vh, 1vh) * 100);
@@ -206,7 +292,7 @@ a {
 }
 
 .main_body main {
-  width: 100%;
+  width: 80%;
 }
 
 main {
@@ -320,9 +406,14 @@ header {
 .card_header_text {
   display: flex;
   justify-content: center;
-  color: #fff;
   flex-direction: column;
   margin-left: 10px;
+}
+
+.card_header_text p,
+.card_header_text h3 {
+  color: #fff;
+  font-family: 'AvenirNext Regular';
 }
 
 .card_content {
