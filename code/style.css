@@ -57,7 +57,7 @@ h6 {
 }
 
 .whole_width_in_margin_parent {
-  width: 100vw;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   position: relative;
@@ -79,7 +79,6 @@ h6 {
 .user_container {
   display: flex;
   gap: 7px;
-  margin: 0px 19px;
 }
 
 /* user ends */
@@ -107,14 +106,20 @@ h6 {
   background-color: #8089f7;
   padding: 25px;
 }
+
+.quote_inner_container{
+  width: 80%;
+  margin: 0 auto;
+}
+
 .quote_container h2 {
-  margin: 25px;
+  margin: 25px 0;
   color: #fff;
   font-size: 28px;
 }
 
 .quote_container_user_container {
-  margin: 25px;
+  margin: 25px 0;
 }
 
 .quote_container_user_container p {
@@ -123,6 +128,13 @@ h6 {
 
 .quote_container_user_container .quote_container_name {
   font-size: 18px;
+}
+
+@media only screen and (max-width: 800px) {
+  .quote_inner_container{
+    width: 100%;
+    margin: 0 20px;
+  }
 }
 
 /* quote container ends */
@@ -140,7 +152,6 @@ h6 {
 
 .social_media_container {
   display: flex;
-  margin-left: 19px;
   gap: 10px;
   margin-top: 15px;
 }
@@ -243,7 +254,6 @@ h6 {
 
 /* articel image and text */
 .article_image_and_text {
-  margin-left: 19px;
   display: flex;
   margin-top: 25px;
   gap: 25px;
@@ -1182,7 +1192,7 @@ nav {
 /* title container begins*/
 
 .title_container {
-  margin: 20px 19px;
+  margin: 20px 0;
 }
 
 .title_container p,
