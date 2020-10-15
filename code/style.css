@@ -107,7 +107,7 @@ h6 {
   padding: 25px;
 }
 
-.quote_inner_container{
+.quote_inner_container {
   width: 80%;
   margin: 0 auto;
 }
@@ -131,7 +131,7 @@ h6 {
 }
 
 @media only screen and (max-width: 800px) {
-  .quote_inner_container{
+  .quote_inner_container {
     width: 100%;
     margin: 0 20px;
   }
@@ -329,17 +329,22 @@ header {
   height: 110px;
 }
 
-.main_header {
-  background-image: url("../design/images/main.gif");
-  background-position-x: center;
-}
-
 .header_content {
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.header_content video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
 }
 
 .header_content button {
