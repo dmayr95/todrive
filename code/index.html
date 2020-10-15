@@ -75,8 +75,8 @@
             </div>
         </nav>
         <div class="header_content">
-            <video playsinline autoplay loop>
-                <source type="video/mp4" src="../design/images/cardriving_compressed.mp4">
+            <video playsinline autoplay loop muted autobuffer preload="auto" poster="poster.png" class="background-video">
+                <source src="../design/images/cardriving_compressed-2.mp4" type='video/mp4;'>
             </video>
             <h2
                 style="font-family: 'AvenirNext Bold'; color: #fff; text-align: center; margin-bottom: 35px; font-size: 40px;">
@@ -377,15 +377,16 @@
             <p class="subscribe_success_text" style="color: rgb(36, 216, 13); display: none;">Successfully subscribed
             </p>
         </div>
-
-        <footer style="width: 100%; margin-top: 40px; margin-bottom: 15px;">
-            <div class="rights">
-                <p>Copyright © 2020 ToDrive. All rights reserved.</p>
-                <br />
-                <p><a href="">Imprint</a> | <a href="">Privacy Policy</a></p>
-            </div>
-        </footer>
     </main>
+    <!-- footer begins -->
+    <footer style="width: 100%; margin-top: 40px; margin-bottom: 15px;">
+        <div class="rights">
+            <p>Copyright © 2020 ToDrive. All rights reserved.</p>
+            <br />
+            <p><a href="">Imprint</a> | <a href="">Privacy Policy</a></p>
+        </div>
+    </footer>
+    <!-- footer ends -->
 
     <script type="text/javascript">
         /* slick slider begins */
@@ -467,7 +468,11 @@
 
 
         /* hamburger animation ends */
-   
+
+        /* video ends */
+
+
+        /* video ends */
 
         /* button animations begins */
 
